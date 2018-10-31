@@ -1,4 +1,4 @@
-class Fishtanks < ActiveRecord::Base 
+class Fishtank < ActiveRecord::Base 
   belongs_to :user 
   has_many :fish 
   
