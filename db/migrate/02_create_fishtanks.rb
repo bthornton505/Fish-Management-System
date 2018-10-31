@@ -5,7 +5,7 @@ class CreateFishtanks < ActiveRecord::Migration
       t.integer :gallons
       t.integer :fish_capacity
       t.integer :user_id 
-      t.integer :fish_id
+      # t.integer :fish_id
     end 
   end 
   
