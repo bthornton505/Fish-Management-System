@@ -7,4 +7,5 @@ class CreateFish < ActiveRecord::Migration
       t.integer :fishtank_id
     end 
   end 
+  
 end 
