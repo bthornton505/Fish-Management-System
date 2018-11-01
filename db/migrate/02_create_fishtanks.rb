@@ -1,4 +1,4 @@
-class CreateFishtanks < ActiveRecord::Migration
+class CreateFishtanks < ActiveRecord::Migration[4.2]
   
   def change 
     create_table :fishtanks do |t|
