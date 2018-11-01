@@ -1,8 +1,8 @@
 class UsersController < ApplicationController 
   
-  get '/profile' do 
-    @user = User.find_by(params[:username])
-    erb :'users/profile'
+  get '/profile/:slug' do 
+    @user = User.find_by_slug(params[:slug])
+    erb :'/users/profile'
   end 
   
   get '/signup' do 
@@ -20,8 +20,12 @@ class UsersController < ApplicationController
     end 
   end 
   
+  get '/login' do 
+    erb :'users/login'
+  end 
+  
   get '/logout' do 
-    logout!
+    logout
     redirect to '/login'
   end 
   
