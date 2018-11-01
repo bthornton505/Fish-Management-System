@@ -1,4 +1,4 @@
 class Fish < ActiveRecord::Base 
-  belongs_to :fishtanks
+  belongs_to :fishtank
   
 end 
