@@ -5,7 +5,7 @@
     <div>
       <h1>Aquarium Manager</h1>
       <h3>Welcome, <%= @current_user.username %></h3> <!--This would display the current user logged_in-->
-      <a href="/profile/<%= @user.slug %>">Profile</a>
+      <a href='/users/<%= @current_user.slug %>'>Profile</a>
       <a href="/logout">Log Out</a>
     </div>
     
