@@ -1,6 +1,6 @@
 class UsersController < ApplicationController 
   
-  get '/profile/:slug' do 
+  get '/users/:slug' do 
     @user = User.find_by_slug(params[:slug])
     erb :'/users/profile'
   end 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save 
       session[:user_id] = @user.id 
-      redirect to '/profile/:slug'
+      redirect to 'users/profile'
     end 
   end 
   
