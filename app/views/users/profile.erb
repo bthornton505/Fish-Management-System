@@ -1,3 +1,13 @@
 <h2><%= @user.username %>'s Fishtanks</h2>
 
+  <% Fishtank.all.each do |f| %>
+    <ul>
+      <li>
+        <a href="/fishtanks/<%= f.id %>"><%= f.name %></a>
+      </li>
+    </ul>
+  <% end %>
+
+<a href='/new_fishtank'>Create Fishtank</a>
 <a href='/'>Home</a>
+<a href="/logout">Log Out</a>
