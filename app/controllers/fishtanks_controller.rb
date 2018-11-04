@@ -27,4 +27,17 @@ class FishtanksController < ApplicationController
     end 
   end 
   
+  get '/fishtanks/:id/edit' do 
+    if logged_in?
+      @fishtank = Fishtank.find_by_id(params[:id])
+      if @fishtank && @fishtank.user == @current_user 
+        erb :'/fishtanks/edit_fishtank'
+      else 
+        redirect to '/'
+      end 
+    else 
+      redirect to '/login'
+    end 
+  end 
+  
 end 
