@@ -9,7 +9,7 @@ class FishtanksController < ApplicationController
       if params[:name] == "" || params[:fish_capacity] == ""
         redirect to '/fishtanks/new_fishtank'
       else 
-        @fishtank = Fishtank.new(:name => params[:name], :fish_capacity => params[:fish_capacity])
+        @fishtank = @current_user.fishtanks.build(:name => params[:name], :fish_capacity => params[:fish_capacity])
         @fishtank.save 
         redirect to "/fishtanks/#{@fishtank.id}"
       end 
