@@ -1,2 +1,8 @@
 <h2>Edit Fishtank</h2>
 
+<form action="/fishtanks/<%= @fishtank.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p><input type="text" name="name" placeholder="<%= @fishtank.name %>"></p>
+  <p><input type="number" name="fish_capacity" placeholder="<%= @fishtank.fish_capacity %>"></p>
+</form>
+
