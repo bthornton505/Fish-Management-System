@@ -2,9 +2,17 @@
 <h4>Fish Capacity: <%= @fishtank.fish_capacity %></h4>
 
 <p>Fish:</p>
-    
-    
 
+<% @fishtanks.fish.each do |f| %>
+  <ul>
+    <li>
+      <a href="/fish/<%= f.id %>"><%= f.species %></a>
+    </li>
+  </ul>
+<% end %>
+    
+    
+<a href='/new_fish'>Add a Fish</a>
 <a href="/fishtanks/<%= @fishtank.id %>/edit">Edit Fishtank</a>
 <a href='/users/<%= @current_user.slug %>'>Profile</a>
 <a href='/'>Home</a>
