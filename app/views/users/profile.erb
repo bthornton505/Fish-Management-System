@@ -1,6 +1,6 @@
 <h2><%= @user.username %>'s Fishtanks</h2>
 
-  <% Fishtank.all.each do |f| %>
+  <% @user.fishtanks.each do |f| %>
     <ul>
       <li>
         <a href="/fishtanks/<%= f.id %>"><%= f.name %></a>
