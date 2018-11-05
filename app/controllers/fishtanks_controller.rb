@@ -40,4 +40,21 @@ class FishtanksController < ApplicationController
     end 
   end 
   
+  patch '/fishtanks/:id' do 
+    if logged_in?
+      if params[:name] == "" || params[:fish_capacity] == ""
+        redirect to "/fishtanks/#{params[:id]}/edit"
+      else 
+        @fishtank = Fishtank.find_by_id(params[:id])
+        if @fishtank && @fishtank.user == @current_user 
+          @fishtank.update(:name => params[:name], :fish_capacity => params[:fish_capacity])
+          redirect to "/fishtanks/#{@fishtank.id}"
+        else 
+          redirect to "/fishtanks/#{@fishtank.id}/edit"
+        end 
+      end 
+      redirect to '/login'
+    end 
+  end 
+  
 end 
