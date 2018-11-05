@@ -1,6 +1,7 @@
 class FishtanksController < ApplicationController 
   
   get '/new_fishtank' do 
+    redirect_if_not_logged_in
     erb :'fishtanks/new_fishtank'
   end 
   
