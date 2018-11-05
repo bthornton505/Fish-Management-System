@@ -57,4 +57,16 @@ class FishtanksController < ApplicationController
     end 
   end 
   
+  post '/fishtanks/:id/delete' do 
+    if logged_in?
+      @fishtank = Fishtank.find_by_id(params[:id])
+      if @fishtank && @fishtank.user == @current_user 
+        @fishtank.delete 
+        redirect to "/"
+      end 
+    else 
+      redirect to '/login'
+    end 
+  end 
+  
 end 
