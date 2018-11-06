@@ -1,6 +1,6 @@
 class Fishtank < ActiveRecord::Base 
   belongs_to :user 
-  has_many :fish 
+  has_many :fishes
   
   def count_by_species(species) # this method would allow you to add multiples of the same fish to a fishtank 
     count = 0 
