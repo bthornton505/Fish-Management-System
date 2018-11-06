@@ -3,5 +3,12 @@
 <form action='/new_fish' method="POST">
   <p><input type="text" name="species" placeholder="species"></p>
   
+  <p>Which tank would you like to add this fish to?</p>
+  <select>
+    <% @current_user.fishtanks.each do |f| %>
+      <option value="<%= f.id %>"><%= f.name %></option>
+    <% end %>
+  </select>
+  <br><br>
   <input type="submit" value="Add Fish">
 </form>
