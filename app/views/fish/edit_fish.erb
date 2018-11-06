@@ -1,0 +1,22 @@
+<h2>Edit Fish</h2>
+
+<form action="/fish/<%= @fish.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p>Species: <input type="text" name="species" value="<%= @fish.species %>"></p>
+  
+  <p>Would you like to move this fish to a different fishtank?</p>
+  <select name="fishtank_id">
+    <% @current_user.fishtanks.each do |f| %>
+      <option value="<%= f.id %>"><%= f.name %></option>
+    <% end %>
+  </select>
+  <br><br>
+  <input type="submit" value="Update Fish">
+</form>
+<br>
+<form action='/fish/<%= @fish.id %>/delete' method="POST">
+  <input type="hidden" id="hidden" name="hidden" value="DELETE">
+  <input type="submit" value="Delete Fish">
+</form>
+<br>
+
