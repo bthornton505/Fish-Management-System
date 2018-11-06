@@ -3,10 +3,10 @@
 
 <p>Fish:</p>
 
-<% @fishtank.fishes.each do |f| %>
+<% @fishtank.fishes.each do |fish| %>
   <ul>
     <li>
-      <a href="/fish/<%= f.id %>"><%= f.species %></a>
+      <a href="/fish/<%= fish.id %>"><%= fish.species %></a>
     </li>
   </ul>
 <% end %>
