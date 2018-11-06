@@ -4,7 +4,7 @@
   <p><input type="text" name="species" placeholder="species"></p>
   
   <p>Which tank would you like to add this fish to?</p>
-  <select>
+  <select name="fishtank_id">
     <% @current_user.fishtanks.each do |f| %>
       <option value="<%= f.id %>"><%= f.name %></option>
     <% end %>
