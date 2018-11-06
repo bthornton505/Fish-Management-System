@@ -3,7 +3,7 @@
   <% if logged_in? %>
   
     <div>
-      <h1>Aquarium Manager</h1>
+      <h1>CrazyFish</h1>
       <h3>Welcome, <%= @current_user.username %></h3> <!--This would display the current user logged_in-->
       <a href='/users/<%= @current_user.slug %>'>Profile</a>
       <a href="/logout">Log Out</a>
@@ -12,7 +12,7 @@
   <% else %>
   
     <div>
-      <h1>Welcome to Aquarium Manager!</h1>
+      <h1>Welcome to CrazyFish!</h1>
       <h4>Please login or signup </h4>
       
       <a href="/login">Login</a>
