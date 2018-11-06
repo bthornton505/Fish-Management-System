@@ -3,7 +3,7 @@
 
 <p>Fish:</p>
 
-<% @fishtank.fish.each do |f| %>
+<% Fish.all.each do |f| %>
   <ul>
     <li>
       <a href="/fish/<%= f.id %>"><%= f.species %></a>
