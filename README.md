@@ -1,5 +1,5 @@
 # Fish-Management-System
-This is a Sinatra application that will help fishtank enthusiasts keep track of the fish they have in their tanks. 
+This is a Sinatra application that will help fishtank enthusiasts keep track of the fish they have in their tanks. This application is still in development. 
 
 ### Installation Instructions
 1. `git clone` from https://github.com/bthornton505/Fish-Management-System
