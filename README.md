@@ -13,4 +13,4 @@ Submit issues on this repository https://github.com/bthornton505/Fish-Management
 
 ### License 
 
-https://github.com/unenlightened/ink-well-app/blob/master/LICENSE.md
+https://github.com/bthornton505/Fish-Management-System/blob/master/LICENSE.md
