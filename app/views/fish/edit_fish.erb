@@ -2,7 +2,7 @@
 
 <form action="/fish/<%= @fish.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <p>Species: <input type="text" name="species" value="<%= @fish.species %>"></p>
+  <p>Species: <input type="text" name="species" value="<%= @fish.species %>" required></p>
   
   <p>Would you like to move this fish to a different fishtank?</p>
   <select name="fishtank_id">
