@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
     
     if !@user.valid?
-      # flash_error(@user)
+      flash_error(@user)
       redirect to '/signup'
     end
     
