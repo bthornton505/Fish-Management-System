@@ -3,7 +3,7 @@ class Fishtank < ActiveRecord::Base
   has_many :fishes
   
   validates :name, presence: {message: "Name can't be blank."}
-  validates :gallons, presence: {message: "Name can't be blank."}
+  validates :gallons, presence: {message: "Gallons can't be blank."}
   
   
   
