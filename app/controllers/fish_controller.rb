@@ -7,13 +7,14 @@ class FishController < ApplicationController
   
   post '/new_fish' do 
     redirect_if_not_logged_in
-    if params[:species] == "" || params[:fishtank_id] == ""
+    @fish = Fish.create(:species => params[:species], :fishtank_id => params[:fishtank_id])
+    
+    if !@fish.valid?
+      flash_error(@user)
       redirect to '/fish/new_fish'
-    else 
-      @fish = Fish.new(:species => params[:species], :fishtank_id => params[:fishtank_id])
-      @fish.save 
-      redirect to "/fish/#{@fish.id}"
-    end 
+    end  
+      
+    redirect to "/fish/#{@fish.id}"
   end 
   
   get '/fish/:id' do 
