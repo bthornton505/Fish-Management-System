@@ -36,6 +36,17 @@ class ApplicationController < Sinatra::Base
       session.clear 
     end 
     
+    def flash_error(obj)
+      obj.errors.messages.values.each do |v|
+        flash_message(v.first, "error")
+      end
+    end
+    
+    def flash_message(message, type="info")
+      flash[:message] ||= []
+      flash[:message] << [message, type]
+    end
+    
   end 
   
 end 
