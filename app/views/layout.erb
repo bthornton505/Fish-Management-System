@@ -7,7 +7,16 @@
   <body>
     
     <div class="container">
-       
+      <br>
+      <% if !!flash[:message] %>
+        <% flash[:message].each do |m| %>
+          <div class="flash <%= m.last %>">
+            <%= m.first %>
+          </div>
+        <% end %>
+        <% flash[:message].clear %>
+      <% end %>
+      <br>
       <%= yield %>
       
     </div>
