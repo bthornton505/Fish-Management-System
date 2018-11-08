@@ -7,10 +7,10 @@ class FishtanksController < ApplicationController
   
   post '/new_fishtank' do 
     redirect_if_not_logged_in
-    if params[:name] == "" || params[:fish_capacity] == ""
+    if params[:name] == "" || params[:gallons] == ""
       redirect to '/fishtanks/new_fishtank'
     else 
-      @fishtank = @current_user.fishtanks.build(:name => params[:name], :fish_capacity => params[:fish_capacity])
+      @fishtank = @current_user.fishtanks.build(:name => params[:name], :gallons => params[:gallons])
       @fishtank.save 
       redirect to "/fishtanks/#{@fishtank.id}"
     end 
@@ -34,12 +34,12 @@ class FishtanksController < ApplicationController
   
   patch '/fishtanks/:id' do 
     redirect_if_not_logged_in
-    if params[:name] == "" || params[:fish_capacity] == ""
+    if params[:name] == "" || params[:gallons] == ""
       redirect to "/fishtanks/#{params[:id]}/edit"
     else 
       @fishtank = Fishtank.find_by_id(params[:id])
       if @fishtank && @fishtank.user == @current_user 
-        @fishtank.update(:name => params[:name], :fish_capacity => params[:fish_capacity])
+        @fishtank.update(:name => params[:name], :gallons => params[:gallons])
         redirect to "/fishtanks/#{@fishtank.id}"
       else 
         redirect to "/fishtanks/#{@fishtank.id}/edit"
