@@ -3,7 +3,7 @@
 <form action="/fishtanks/<%= @fishtank.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <p>Name: <input type="text" name="name" value="<%= @fishtank.name %>" required ></p>
-  <p>Fish Capacity: <input type="number" name="fish_capacity" value="<%= @fishtank.fish_capacity %>" required></p>
+  <p>Fish Capacity: <input type="number" name="gallons" value="<%= @fishtank.gallons %>" required></p>
   
   <input type="submit" value="Update">
 </form>
