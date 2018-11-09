@@ -1,14 +1,9 @@
-<a href='/users/<%= @current_user.slug %>'>Profile</a>
-<a href='/'>Home</a>  
-<a href="/logout">Log Out</a>
-<br><br>
-
-<h1>CrazyFish Users</h1>
-
+<h1>Checkout other CrazyFish tanks!</h1>
+<br>
 <% User.all.each do |u| %>
   <ul>
     <li>
-      <a href="/users/<%= u.slug %>"><%= u.username %></a>
+      <h3><a href="/users/<%= u.slug %>"><%= u.username %></a></h3>
     </li>
   </ul>
 <% end %>
