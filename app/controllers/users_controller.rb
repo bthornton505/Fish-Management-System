@@ -1,5 +1,11 @@
 class UsersController < ApplicationController 
   
+  get '/users' do 
+    redirect_if_not_logged_in
+    @users = User.all 
+    erb :'/users/all_users'
+  end 
+  
   get '/users/:slug' do 
     redirect_if_not_logged_in
     @user = User.find_by_slug(params[:slug])
