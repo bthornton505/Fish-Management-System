@@ -5,10 +5,10 @@
   <p>Name: <input type="text" name="name" value="<%= @fishtank.name %>" required ></p>
   <p>Gallons: <input type="number" name="gallons" value="<%= @fishtank.gallons %>" required></p>
   
-  <input type="submit" value="Update">
+  <button class="btn btn-primary" type="submit">Update</button>
 </form>
 <br>
 <form action='/fishtanks/<%= @fishtank.id %>/delete' method="POST">
   <input type="hidden" id="hidden" name="hidden" value="DELETE">
-  <input type="submit" value="Delete Fishtank">
+  <button class="btn btn-primary" type="submit">Delete Fishtank</button>
 </form><br>

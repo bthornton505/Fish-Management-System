@@ -11,12 +11,12 @@
     <% end %>
   </select>
   <br><br>
-  <input type="submit" value="Update Fish">
+  <button class="btn btn-primary" type="submit">Update</button>
 </form>
 <br>
 <form action='/fish/<%= @fish.id %>/delete' method="POST">
   <input type="hidden" id="hidden" name="hidden" value="DELETE">
-  <input type="submit" value="Delete Fish">
+  <button class="btn btn-primary" type="submit">Delete Fish</button>
 </form>
 <br>
 
