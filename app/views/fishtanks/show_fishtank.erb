@@ -4,15 +4,15 @@
 <br><br>
 
 
-<h2><%= @fishtank.name %></h2>
-<h4>Gallons: <%= @fishtank.gallons %></h4>
+<h1><%= @fishtank.name %></h1>
+<h3>Gallons: <%= @fishtank.gallons %></h3>
 
-<p>Fish:</p>
+<h4>Fish:</h4>
 
 <% @fishtank.fishes.each do |fish| %>
   <ul>
     <li>
-      <a href="/fish/<%= fish.id %>"><%= fish.species %></a>
+      <h4><a href="/fish/<%= fish.id %>"><%= fish.species %></a></h4>
     </li>
   </ul>
 <% end %>
