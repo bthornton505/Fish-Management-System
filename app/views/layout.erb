@@ -60,7 +60,7 @@
     
     <div class="container">
       <br>
-      <% if !!flash[:message] %>
+      <% if !!flash[:message] %> <!-- This erb method shows a user if the username or email is taken already" -->
         <% flash[:message].each do |m| %>
           <div class="flash <%= m.last %>">
             <%= m.first %>
