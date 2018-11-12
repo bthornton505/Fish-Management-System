@@ -61,6 +61,7 @@
     <div class="container">
       <br>
       <% if !!flash[:message] %> <!-- This erb method shows a user if the username or email is taken already" -->
+      <div class="alert alert-danger" role="alert">
         <% flash[:message].each do |m| %>
           <div class="flash <%= m.last %>">
             <%= m.first %>
@@ -68,6 +69,10 @@
         <% end %>
         <% flash[:message].clear %>
       <% end %>
+      </div>
+    </div>
+    
+    <div class="container">  
       
       <%= yield %>
       
