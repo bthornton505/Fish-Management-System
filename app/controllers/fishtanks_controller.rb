@@ -48,10 +48,10 @@ class FishtanksController < ApplicationController
     end 
   end 
   
-  post '/fishtanks/:id/delete' do 
+  delete '/fishtanks/:id/delete' do 
     redirect_if_not_logged_in
     @fishtank = Fishtank.find_by_id(params[:id])
-    if @current_user != @fishtank.user
+    if @fishtank && @fishtank.user == @current_user
       @fishtank.delete 
       redirect to "/"
     end 
