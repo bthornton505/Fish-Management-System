@@ -9,6 +9,6 @@
 </form>
 <br>
 <form action='/fishtanks/<%= @fishtank.id %>/delete' method="POST">
-  <input type="hidden" id="hidden" name="hidden" value="DELETE">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
   <button class="btn btn-primary" type="submit">Delete Fishtank</button>
 </form><br>
