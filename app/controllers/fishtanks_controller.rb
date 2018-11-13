@@ -10,8 +10,8 @@ class FishtanksController < ApplicationController
     @fishtank = @current_user.fishtanks.create(:name => params[:name], :gallons => params[:gallons])
     
     if !@fishtank.valid?
-      flash_error(@user)
-      redirect to '/fishtanks/new_fishtank'
+      flash_error(@fishtank)
+      redirect to '/new_fishtank'
     end 
       
     redirect to "/fishtanks/#{@fishtank.id}"
