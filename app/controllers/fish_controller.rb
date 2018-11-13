@@ -10,8 +10,8 @@ class FishController < ApplicationController
     @fish = Fish.create(:species => params[:species], :fishtank_id => params[:fishtank_id])
     
     if !@fish.valid?
-      flash_error(@user)
-      redirect to '/fish/new_fish'
+      flash_error(@fish)
+      redirect to '/new_fish' 
     end  
       
     redirect to "/fish/#{@fish.id}"
